@@ -4,14 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Branches/branches.dart';
 
-class Sozlamalar extends StatefulWidget {
-  const Sozlamalar({Key? key}) : super(key: key);
+class Setting extends StatefulWidget {
+  const Setting({Key? key}) : super(key: key);
 
   @override
-  State<Sozlamalar> createState() => _SozlamalarState();
+  State<Setting> createState() => _SozlamalarState();
 }
 
-class _SozlamalarState extends State<Sozlamalar> {
+class _SozlamalarState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _SozlamalarState extends State<Sozlamalar> {
         ),
         backgroundColor: Colors.white,
         title: Text(
-          "Sozlamalar",
+          "Setting",
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20),
         ),

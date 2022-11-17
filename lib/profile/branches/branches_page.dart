@@ -14,14 +14,14 @@ import 'package:module2_exam/profile/Branches/sirk.dart';
 
 import 'Yunusobod.dart';
 
-class Filiallar extends StatefulWidget {
-  const Filiallar({Key? key}) : super(key: key);
+class Branches extends StatefulWidget {
+  const Branches({Key? key}) : super(key: key);
 
   @override
-  State<Filiallar> createState() => _FiliallarState();
+  State<Branches> createState() => _BranchesState();
 }
 
-class _FiliallarState extends State<Filiallar> {
+class _BranchesState extends State<Branches> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _FiliallarState extends State<Filiallar> {
         iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         title: const Text(
-          "Filiallar",
+          "Branches",
           style: TextStyle(
               color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
         ),

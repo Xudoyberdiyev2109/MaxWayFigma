@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:module2_exam/Orders/orders2.dart';
 
-class Buyurtma extends StatefulWidget {
-  const Buyurtma({super.key});
+class Orders1 extends StatefulWidget {
+  const Orders1({super.key});
 
   @override
-  State<Buyurtma> createState() => _BuyurtmaState();
+  State<Orders1> createState() => _BuyurtmaState();
 }
 
-class _BuyurtmaState extends State<Buyurtma> with TickerProviderStateMixin {
+class _BuyurtmaState extends State<Orders1> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -70,7 +70,7 @@ class _BuyurtmaState extends State<Buyurtma> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-          Order(),
+          Orders2(),
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: SvgPicture.asset(

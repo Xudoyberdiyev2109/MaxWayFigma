@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-class Order3 extends StatefulWidget {
-  const Order3({Key? key}) : super(key: key);
+class Orders3 extends StatefulWidget {
+  const Orders3({Key? key}) : super(key: key);
 
   @override
-  State<Order3> createState() => _Order3State();
+  State<Orders3> createState() => _Order3State();
 }
 
-class _Order3State extends State<Order3> {
+class _Order3State extends State<Orders3> {
   @override
   Widget build(BuildContext context) {
     return  Container(

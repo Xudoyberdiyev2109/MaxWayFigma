@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class Buyuk extends StatefulWidget {
-  const Buyuk({Key? key}) : super(key: key);
+class Great extends StatefulWidget {
+  const Great({Key? key}) : super(key: key);
 
   @override
-  State<Buyuk> createState() => _BuyukState();
+  State<Great> createState() => _BuyukState();
 }
 
-class _BuyukState extends State<Buyuk> {
+class _BuyukState extends State<Great> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +30,7 @@ class _BuyukState extends State<Buyuk> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Buyuk ipak yo'li metro",
+              "Great ipak yo'li metro",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
