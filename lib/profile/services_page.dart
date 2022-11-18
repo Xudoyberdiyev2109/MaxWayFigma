@@ -1,26 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'condensation_page.dart';
 
-import 'condensation.dart';
-class Xizmatlar extends StatefulWidget {
-  const Xizmatlar({Key? key}) : super(key: key);
+class Services extends StatefulWidget {
+  const Services({Key? key}) : super(key: key);
 
   @override
-  State<Xizmatlar> createState() => _XizmatlarState();
+  State<Services> createState() => _ServicesState();
 }
 
-class _XizmatlarState extends State<Xizmatlar> {
+class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black,
         ),
         backgroundColor: Colors.white,
-        title: Text(
-          "Xizmat haqida",
+        title: const Text(
+          "О сервисе",
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20),
         ),
@@ -30,90 +30,96 @@ class _XizmatlarState extends State<Xizmatlar> {
         child: Column(
           children: [
             Container(
-              height: 50,
+              height: 56,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(10))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                     
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Kondentatsiya(),));
-                    },
-                    child: Text(
-                      "  Kondetsatsiya siyosati",
-                      style: TextStyle(color: Colors.black, fontSize: 20),
-                    ),
+                  BorderRadius.vertical(bottom: Radius.circular(10))),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      child: Text(
+                        "Политика конденциалности",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Condetattion(),))
 
-                  ),
-                  Icon(
-                    CupertinoIcons.right_chevron,
-                    color: Colors.grey,
-                    size: 20,
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 1,
-            ),
-            Container(
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    child: Text(
-                      "  Litsenziya shartnomalari",
-                      style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
-                    onPressed: () => activate(),
-                  ),
-                  Icon(
-                    CupertinoIcons.right_chevron,
-                    color: Colors.grey,
-                    size: 20,
-                  )
-                ],
+                    Icon(
+                      CupertinoIcons.right_chevron,
+                      color: Colors.grey,
+                      size: 20,
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(
               height: 1,
             ),
             Container(
-              height: 50,
+              height: 56,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(10))),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      child: Text(
+                        "Лицензионные соглашения",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                      onPressed: () => activate(),
+                    ),
+                    Icon(
+                      CupertinoIcons.right_chevron,
+                      color: Colors.grey,
+                      size: 20,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            Container(
+              height: 56,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(10))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    child: Text(
-                      "  MaxWayda ishlash",
-                      style: TextStyle(color: Colors.black, fontSize: 20),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      child: Text(
+                        "Работа в MaxWay",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                      onPressed: () => activate(),
                     ),
-                     onPressed: () => activate(),
-                  ),
-                  Icon(
-                    CupertinoIcons.right_chevron,
-                    color: Colors.grey,
-                    size: 20,
-                  )
-                ],
+                    Icon(
+                      CupertinoIcons.right_chevron,
+                      color: Colors.grey,
+                      size: 20,
+                    )
+                  ],
+                ),
               ),
             ),
           ],
         ),
       ),
-      backgroundColor: Colors.grey[300],
     );
   }
 }

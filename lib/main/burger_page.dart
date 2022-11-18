@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:module2_exam/Main/HomePage/Popularniy.dart';
+import 'package:module2_exam/Main/HomePage/Popular_page.dart';
 
 // ignore: must_be_immutable
 class MaxBurPage extends StatefulWidget {
@@ -12,14 +12,10 @@ class MaxBurPage extends StatefulWidget {
 }
 
 class _MaxBurPageState extends State<MaxBurPage> {
-  int _counter = 1;
-
   void ayirma(index) {}
 
   void hisobla() {
-    setState(() {
-      _counter++;
-    });
+    setState(() {});
   }
 
   List removes = List.generate(10, (index) => false);
@@ -28,7 +24,7 @@ class _MaxBurPageState extends State<MaxBurPage> {
   List son1 = List.generate(10, (index) => 1);
   List isTrue = List.generate(10, (index) => true);
   List isTrue1 = List.generate(10, (index) => true);
-  bool Istrue = true;
+  bool sTrue = true;
   late int kup;
   late int narx = 25000;
   bool color = true;
@@ -45,55 +41,46 @@ class _MaxBurPageState extends State<MaxBurPage> {
   Widget build(BuildContext context) {
     return SliverGrid(
       delegate: SliverChildBuilderDelegate((context, index) {
-        return InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const Populyarniy();
-            }));
-          },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 9,
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 1, horizontal: 12),
+          child: Container(
+            width: 170,
+            height: 222,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: const Color(0xffFFFFFF),
             ),
-            child: Container(
-              width: 190,
-              height: 232,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: const Color(0xffffffff),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    width: 190,
-                    height: 124,
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffEEE9F2),
-                    ),
-                    child: const Image(
-                      image: AssetImage("images/burger.jpg"),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                        top: 16, left: 8, bottom: 14, right: 75),
-                    child: Text(
-                      "Макс Бургер",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff000000)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Popular(),)),
+                child: Container(
+                  width: 180,
+                  height: 124,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("images/burger.jpg"))),
+                ),),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10, left: 10, bottom: 10),
+                  child: Text(
+                    "Maks Burger",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Istrue = !Istrue;
-                      isTrue1[index] = !isTrue1[index];
-                      setState(() {});
-                    },
-                    child: isTrue1[index]
-                        ? Padding(
+                ),
+                InkWell(
+                  onTap: () {
+                    sTrue = !sTrue;
+                    isTrue1[index] = !isTrue1[index];
+                    setState(() {});
+                  },
+                  child: isTrue1[index]
+                      ? Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 2),
                           child: Container(
@@ -111,64 +98,58 @@ class _MaxBurPageState extends State<MaxBurPage> {
                             ),
                           ),
                         )
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  color: const Color(0xffE7E9E8),
-                                ),
-                                child: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        son1[index]--;
-                                        if (son1[index] < 1) {
-                                          son1[index] = 1;
-                                          Istrue = !Istrue;
-                                          isTrue1[index] = !isTrue1[index];
-                                        }
-                                        setState(() {});
-                                        _counter = 1;
-                                      });
-                                    },
-                                    icon: const Icon(
-                                      Icons.remove,
-                                    )),
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: const Color(0xffE7E9E8),
                               ),
-                              Text("${son1[index]}"),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  color: const Color(0xffE7E9E8),
-                                ),
-                                child: IconButton(
+                              child: IconButton(
                                   onPressed: () {
-                                    son1[index]++;
-                                    setState(() {});
+                                    setState(() {
+                                      son1[index]--;
+                                      if (son1[index] < 1) {
+                                        son1[index] = 1;
+                                        sTrue = !sTrue;
+                                        isTrue1[index] = !isTrue1[index];
+                                      }
+                                      setState(() {});
+                                    });
                                   },
-                                  icon: const Icon(Icons.add),
-                                ),
+                                  icon: const Icon(
+                                    Icons.remove,
+                                  )),
+                            ),
+                            Text("${son1[index]}"),
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: const Color(0xffE7E9E8),
                               ),
-                            ],
-                          ),
-                  ),
-                ],
-              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  son1[index]++;
+                                  setState(() {});
+                                },
+                                icon: const Icon(Icons.add),
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
+              ],
             ),
           ),
         );
       }, childCount: 10),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          childAspectRatio: 2,
-          mainAxisSpacing: 10,
-          //crossAxisSpacing: 1,
-          maxCrossAxisExtent: 200,
-          mainAxisExtent: 220),
+          childAspectRatio: 2, maxCrossAxisExtent: 197, mainAxisExtent: 222),
     );
   }
 }

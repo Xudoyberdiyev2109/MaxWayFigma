@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class Kondentatsiya extends StatefulWidget {
-  const Kondentatsiya({Key? key}) : super(key: key);
+class Condetattion extends StatefulWidget {
+  const Condetattion({Key? key}) : super(key: key);
 
   @override
-  State<Kondentatsiya> createState() => _KondentatsiyaState();
+  State<Condetattion> createState() => _CondetattionState();
 }
 
-class _KondentatsiyaState extends State<Kondentatsiya> {
+class _CondetattionState extends State<Condetattion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white,
+      appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
         title: Text(
-          "Kondentatsiya siyosati",
+          "Политика конденциалности",
           style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w500,color: Colors.black
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
@@ -27,22 +28,21 @@ class _KondentatsiyaState extends State<Kondentatsiya> {
         padding: const EdgeInsets.all(8.0),
         child: Container(
           width: 400,
-          height: 190,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.grey[100]),
+          height: 180,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xffFFFFFF)),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Biz mijozlarimizni xursand qilamiz",style:   TextStyle(fontWeight: FontWeight.w500, fontSize: 20),),
+              children: const [
+                Text("Мы делаем клиентов счастливыми",style:   TextStyle(fontWeight: FontWeight.w500, fontSize: 17),),
                 SizedBox(height: 5,),
-                Text("MaxWay kompaniyasining tarixi O'zbekiston Respublikasining jadal rivojlanayotgan bozorida ishlaydi va o'sib borayotgan bozor talabini qondirishga qaratilgan. So'nggi 4 yil ichida kompaniya ajoyib natijalarni namoyish etdi va asosiy faoliyati: Oziq-ovqat va ichimliklar orqali barqaror rivojlanib bormoqda.", style: TextStyle( fontSize: 17),)
-              ],
+Text("История компании MaxWay работает на быстрорастущем рынке Республики Узбекистан и ориентирована на удовлетворение растущего спроса рынка. Компания продемонстрировала отличные результаты за последние 4 лет и устойчиво растет за счет основного направления бизнеса: Продукты питания и напитки.",style: TextStyle(fontWeight: FontWeight.w400,fontSize: 13,),)              ],
             ),
           ),
     ),
       ),
-      backgroundColor: Colors.grey[300],
+
     );
   }
 }

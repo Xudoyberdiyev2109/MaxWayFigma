@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:module2_exam/Orders/orders2.dart';
+import 'package:module2_exam/Orders/orders2_page.dart';
 
 class Orders1 extends StatefulWidget {
   const Orders1({super.key});
@@ -22,7 +22,6 @@ class _BuyurtmaState extends State<Orders1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffDFDFDF),
       appBar: AppBar(
         elevation: 0.5,
         backgroundColor: Color(0xffffffff),
@@ -31,7 +30,7 @@ class _BuyurtmaState extends State<Orders1> with TickerProviderStateMixin {
         title: const Padding(
           padding: EdgeInsets.only(bottom: 50, top: 68),
           child: Text(
-            "Mening buyurtmalarim",
+            "Мои заказы",
             style: TextStyle(fontSize: 28, color: Color(0xff000000)),
           ),
         ),
@@ -55,11 +54,11 @@ class _BuyurtmaState extends State<Orders1> with TickerProviderStateMixin {
                   ),
                   tabs: const [
                     Text(
-                      "Amaldagi buyurtmalar",
+                      "История заказов",
                       style: TextStyle(fontSize: 13, color: Colors.black),
                     ),
                     Text(
-                      "Buyurtmalar tarixi",
+                      "Текущие заказы",
                       style: TextStyle(fontSize: 13, color: Colors.black),
                     ),
                   ]),

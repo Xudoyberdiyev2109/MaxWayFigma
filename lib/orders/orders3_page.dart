@@ -11,8 +11,8 @@ class _Order3State extends State<Orders3> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      width: 371,
-      height: 96,
+      //width: 250,
+      height: 105,
       decoration: BoxDecoration(
         color: Color(0xffffffff),
         borderRadius: BorderRadius.circular(12),

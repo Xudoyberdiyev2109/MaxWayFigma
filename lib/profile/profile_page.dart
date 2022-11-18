@@ -1,9 +1,9 @@
  import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:module2_exam/profile/edit profile.dart';
-import 'Branches/branches.dart';
-import 'settings.dart';
-import 'Services.dart';
+import 'Branches/branches_page.dart';
+import 'settings_page.dart';
+import 'services_page.dart';
 
 class Profil extends StatefulWidget {
   const Profil({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(automaticallyImplyLeading: false,
         toolbarHeight: 144,
         backgroundColor: const Color(0xffFFFFFF),
         title: Row(
@@ -48,7 +48,7 @@ class _ProfilState extends State<Profil> {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return const ProfilniTahrirlash();
+                      return const EditProfil();
                     },
                   ));
                 },
@@ -72,7 +72,7 @@ class _ProfilState extends State<Profil> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Filiallar(),
+                        builder: (context) => const Branches(),
                       ));
                 },
                 child: Row(
@@ -90,7 +90,7 @@ class _ProfilState extends State<Profil> {
                       width: 10,
                     ),
                     const Text(
-                      "Filiallar",
+                      "Филиали",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -122,7 +122,7 @@ class _ProfilState extends State<Profil> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Sozlamalar(),
+                        builder: (context) => const Setting(),
                       ));
                 },
                 child: Row(
@@ -139,7 +139,7 @@ class _ProfilState extends State<Profil> {
                       width: 12,
                     ),
                     const Text(
-                      "Sozlamalar",
+                      "Настройки",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -170,7 +170,7 @@ class _ProfilState extends State<Profil> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Xizmatlar(),
+                        builder: (context) => const Services(),
                       ));
                 },
                 child: Row(
@@ -187,14 +187,14 @@ class _ProfilState extends State<Profil> {
                       width: 12,
                     ),
                     const Text(
-                      "Xizmat haqida",
+                      "О сервисе",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
-                      width: 130,
+                      width: 170,
                     ),
                     SvgPicture.asset("images/svg/chevron.svg")
                   ],
@@ -205,7 +205,6 @@ class _ProfilState extends State<Profil> {
 
         ]),
       ),
-      backgroundColor: const Color(0xffDFDFDF),
     );
   }
 }

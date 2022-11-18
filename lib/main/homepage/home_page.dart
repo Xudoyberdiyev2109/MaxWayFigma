@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../actionPage.dart';
-import '../burger.dart';
+import '../discount_page.dart';
+import '../burger_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,19 +20,19 @@ class _HomePageState extends State<HomePage> {
   List<bool> isTrue = List.generate(13, (index) => false);
   bool post = true;
   final List _list = [
-    "MaksiBoks",
-    "Lavash",
-    "Klab-Send",
-    "shaurma",
-    "Donar",
-    "Shaurma ",
-    "Burger",
-    "Xotdog",
-    "Snek",
-    "Garnir",
-    "Sous",
-    "Ichimliklar",
-    "Desert"
+    "Макси бокс",
+    "Лаваш",
+    "Клаб-сэндвич",
+    "Шаурма",
+    "Донар-кебаб",
+    "Шаурма Баггет ",
+    "Бургерь",
+    "Хот-Дог",
+    "Снеки",
+    "Гарниры",
+    "Соусы",
+    "Напитки",
+    "Десерт"
   ];
 
   @override
@@ -45,8 +45,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffDFDFDF),
-      appBar: AppBar(systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Color(0xffFFFFFF)),
+      appBar: AppBar(elevation: 0,
+        systemOverlayStyle:
+            const SystemUiOverlayStyle(statusBarColor: Color(0xffFFFFFF)),
         toolbarHeight: 70,
         backgroundColor: const Color(0xffFFFFFF),
         title: Padding(
@@ -63,9 +64,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                    ),
-                    hoverColor: Colors.grey,
-                    hintText: "Qidiruv",
+                      borderSide: BorderSide.none
+                    ),fillColor: const Color(0xffF8F6FA),
+                     filled: true,
+                    hintText: "Поиск",
                     hintStyle: const TextStyle(
                       decorationColor: Colors.grey,
                       color: Color(0xff818C99),
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                              left: 8, right: 8, bottom: 12, top: 12),
+                              bottom: 12,top: 12,left: 8,right: 8),
                           child: InkWell(
                             onTap: () {
                               isTrue[index] = !isTrue[index];
@@ -96,15 +98,15 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: Container(
                               padding: const EdgeInsets.only(
-                                  top: 8, left: 12, bottom: 8, right: 12),
-                              height: 36,
-                              width: 99,
+                                  bottom: 8,top: 8,left: 12,right: 12 ),
+
+
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: isTrue[index]
                                     ? const Color(0xff51267D)
-                                    : const Color(0xffffffff),
+                                    : const Color(0xffFFFFFF),
                               ),
                               child: Text(
                                 "${_list[index]}",
@@ -128,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                   width: 151,
                   height: 28,
                   child: Text(
-                    "Tavsiya etilgan",
+                    "Рекомендуем",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                 )),
@@ -151,7 +153,8 @@ class _HomePageState extends State<HomePage> {
                               }));
                             },
                             child: Container(
-                                margin: const EdgeInsets.symmetric(horizontal: 7.27),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 7.27),
                                 height: 88,
                                 width: 112.7,
                                 decoration: BoxDecoration(
@@ -172,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                   width: 151,
                   height: 28,
                   child: Text(
-                    "Burger",
+                    "Бургеры",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                 )),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../Orders/orders.dart';
-import '../profile/profile page.dart';
-import 'Main/HomePage/Homepage.dart';
+import 'package:module2_exam/Orders/orders_page.dart';
+import '../profile/profile_page.dart';
+import 'Main/HomePage/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,32 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage2(),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xff51267D),
+        scaffoldBackgroundColor: const Color(0xffF8F6FA),
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        }),
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+          color: Colors.white,
+          surfaceTintColor: Colors.white,
+          elevation: 0.5,
+          scrolledUnderElevation: 0.5,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      home: const HomePage2(),
     );
   }
 }
@@ -32,7 +55,7 @@ class _HomePage2State extends State<HomePage2> with TickerProviderStateMixin {
   int pageIndex = 0;
   final pages = [
     const HomePage(),
-    const Buyurtma(),
+    const Orders1(),
     const Profil(),
   ];
 
@@ -46,7 +69,8 @@ class _HomePage2State extends State<HomePage2> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[activIcon],
-      bottomNavigationBar: BottomNavigationBar(iconSize: 10,
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 10,
         selectedLabelStyle:
             const TextStyle(fontSize: 12, color: Color(0xff51267D)),
         currentIndex: activIcon,
@@ -60,17 +84,17 @@ class _HomePage2State extends State<HomePage2> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             activeIcon: SvgPicture.asset("images/svg/Home1.svg"),
             icon: SvgPicture.asset("images/svg/Home.svg"),
-            label: "Asosiy",
+            label: "Главное",
           ),
           BottomNavigationBarItem(
             activeIcon: SvgPicture.asset("images/svg/Buy2.svg"),
             icon: SvgPicture.asset("images/svg/Buy.svg"),
-            label: "Mening buyurtmalarim",
+            label: "Мои заказы",
           ),
           BottomNavigationBarItem(
               activeIcon: SvgPicture.asset("images/svg/Profile2.svg"),
               icon: SvgPicture.asset("images/svg/Profile.svg"),
-              label: "Profil"),
+              label: "Личное"),
         ],
       ),
     );

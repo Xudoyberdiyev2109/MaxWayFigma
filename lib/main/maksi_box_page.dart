@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class MaksiBoks extends StatefulWidget {
-  MaksiBoks({Key? key, required this.child}) : super(key: key);
+  const MaksiBoks({Key? key, required this.child}) : super(key: key);
   final String child;
 
   @override
